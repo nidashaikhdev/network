@@ -1,0 +1,52 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+    <div id="use" style="display: none;">{{ user.username }}</div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Network</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" id="all-posts" href="#">All Posts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="following" >Following</a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4" >
+        <div id="profv"></div>
+        <div id="newp" class="mb-4">
+            <h4>Create a new Post</h4>
+            <textarea class="form-control" id="post-content" rows="3" placeholder="Post or Share with your friends!"></textarea>
+            <button class="btn btn-primary mt-2" id="submit-post">Post</button>
+        </div>
+
+
+        <div id="postv">
+            <!-- Posts will be dynamically added here -->
+        </div>
+
+        <div id="pagination" class="d-flex justify-content-center my-4">
+            <!-- Pagination controls will be added here -->
+
+    </div>
+    <p></p><p></p>
+</div>
+    <!-- Add other views as needed -->
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'network/network.js' %}"></script>
+{% endblock %}
